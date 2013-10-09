@@ -3,12 +3,41 @@
 <head>
   <title>PayMeBack</title>
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">   
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
+  <!-- Wrap all page content here -->
+    <div id="wrap"> 
+      <!-- Fixed navbar -->
+      <div id="header">
+        <%= render 'layouts/header' %>
+      </div>
 
-<%= yield %>
+      <!-- Begin page content -->
+      <div class="container">
+        
+         <div class="row row-offcanvas row-offcanvas-right">
+        <div class="col-xs-12 col-sm-9">
+          <p class="pull-right visible-xs">
+            <button type="button" class="btn btn-primary btn-xs" data-toggle="offcanvas">Toggle nav</button>
+          </p>
+          <div id="mainContent">
+            <%= yield %>
+          </div>
+          
+        </div><!--/span-->
+        <div class="col-xs-6 col-sm-3 sidebar-offcanvas" id="sidebar" role="navigation">
+          <%= render 'layouts/sidebar' %>
+        </div><!--/span-->
+      </div><!--/row -->
+              
+      </div>
+    </div>
 
+    <div id="footer">
+      <%= render 'layouts/footer' %>    
+    </div>
 </body>
 </html>
