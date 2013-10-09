@@ -1,0 +1,1 @@
+APPLICATION_METADATA = YAML.load_file("#{Rails.root.to_s}/config/application_metadata.yml")
