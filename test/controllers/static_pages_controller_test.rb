@@ -8,6 +8,7 @@ class StaticPagesControllerTest < ActionController::TestCase
     assert_response :success
     assert_select 'h1', "Welcome to #{application_name}"
     assert_select 'a', "Sign in"
+    assert_select 'a.navbar-brand', "#{application_name}"
   end
 
 
