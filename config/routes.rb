@@ -4,6 +4,7 @@ PayMeBack::Application.routes.draw do
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
+  get "static_pages/about" => "static_pages#about", path: '/about'
   root 'static_pages#home'
 
   # Example of regular route:

@@ -10,6 +10,17 @@ class StaticPagesControllerTest < ActionController::TestCase
     assert_select 'a', "Sign in"
     assert_select 'a.navbar-brand', "#{application_name}"
   end
+  test "header and footer content" do
+  	get :home
+  	assert_select 'p.credit', /#{company_name}/  
+  	assert_select 'a', /About/ #header contains about page and home page
+  	assert_select 'a', /Home/	
+  end
+
+  test "about page" do
+  	get :about
+  	assert_response :success
+  end
 
 
 end
